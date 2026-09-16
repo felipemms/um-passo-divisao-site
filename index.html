@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6ef">
+  <meta name="description" content="Aprenda divisão sem resto, um passo de cada vez, como no seu caderno.">
+  <title>Um passo • Divisão no caderno</title>
+  <link rel="stylesheet" href="assets/style.bee5d4efa7137591fc42b5dbd3e7ad93e8e5bd066a5da506058e902b5d4baf71.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <a class="brand" href="./" aria-label="Um passo, início"><span class="brand-icon">÷</span> um passo<span class="brand-dot">.</span></a>
+      <span class="header-note">aprender no seu ritmo</span>
+      <button class="button button-small button-outline" id="new-problem">Nova conta <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="eyebrow"><span></span> MATEMÁTICA • DIVISÃO SEM RESTO</div>
+        <h1 id="page-title">Divisão, um passo de cada vez<span>.</span></h1>
+        <p>Pegue seu lápis e caderno. Vamos fazer juntos?</p>
+        <svg class="pencil" viewBox="0 0 180 130" aria-hidden="true"><path d="M17 107q25 14 50-1t46-1" fill="none" stroke="#c1bfaf" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 7"/><g transform="rotate(33 112 62)"><path d="M100 20h25v76l-12.5 22L100 96Z" fill="#f5bf59" stroke="#292f33" stroke-width="2"/><path d="M100 20v-8q0-7 7-7h11q7 0 7 7v8" fill="#ee9d8b" stroke="#292f33" stroke-width="2"/><path d="M100 20h25v11h-25Z" fill="#eeeae0" stroke="#292f33" stroke-width="2"/><path d="M100 96h25l-12.5 22Z" fill="#f6e5c7" stroke="#292f33" stroke-width="2"/><path d="m108 110 4.5 8 4.5-8" fill="#292f33"/><path d="M108 34v59m9-59v59" stroke="#c28d32" stroke-width="2"/></g><path d="m54 29 5-10m-17 23-11-3m116 69 9 5" stroke="#94a895" stroke-width="3" stroke-linecap="round"/></svg>
+      </section>
+
+      <div class="lesson-layout">
+        <section class="notebook-card" aria-labelledby="notebook-title">
+          <div class="notebook-heading"><h2 id="notebook-title"><span aria-hidden="true">▤</span> Seu caderno</h2><span id="problem-label">216 ÷ 8</span></div>
+          <div class="paper">
+            <div class="paper-holes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div id="board" class="board"></div>
+            <div class="paper-caption" id="paper-caption">Comece copiando a conta no seu caderno.</div>
+          </div>
+          <div class="notebook-footer"><span class="live-dot"></span> A conta aparece conforme você resolve.</div>
+        </section>
+
+        <section class="lesson-card" aria-label="Passo a passo">
+          <div id="celebration" class="celebration" aria-hidden="true"></div>
+          <div class="progress-heading"><span id="step-count"></span><button id="restart" class="text-button" title="Recomeçar esta conta"><span aria-hidden="true">↺</span> Recomeçar</button></div>
+          <div class="progress-track" role="progressbar" aria-label="Progresso da conta" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div>
+          <div id="step-content"></div>
+          <div class="lesson-bottom"><button id="back" class="text-button">← Voltar um passo</button><div class="companion"><div id="mascot" class="mascot"><button id="mascot-art" aria-label="Pedir uma dica ao Pingo, a corujinha" title="Pedir uma dica ao Pingo"></button><div class="mascot-bubble"><span class="mascot-name">PINGO · SUA CORUJINHA</span><span id="mascot-message">Vamos aprender juntos?</span></div></div><button id="toggle-mascot" class="mascot-toggle" aria-controls="mascot" aria-expanded="true" aria-label="Esconder Pingo, a corujinha" title="Esconder mascote">−</button></div></div>
+        </section>
+      </div>
+
+      <section class="rhythm" aria-label="A sequência da divisão">
+        <span class="rhythm-label">NOSSO CAMINHO</span>
+        <div class="rhythm-steps"><span data-phase="lookup"><b>1</b> Tabuada</span><i>→</i><span data-phase="divide"><b>2</b> Multiplicar</span><i>→</i><span data-phase="subtract"><b>3</b> Subtrair</span><i>→</i><span data-phase="bring"><b>4</b> Baixar</span></div>
+      </section>
+      <footer class="footer">Feito para pensar, tentar e aprender. <span>Um passo de cada vez.</span></footer>
+    </main>
+  </div>
+
+  <dialog id="problem-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-heading"><span class="eyebrow">VAMOS PRATICAR</span><button id="close-dialog" class="icon-button" aria-label="Fechar">×</button></div>
+    <h2 id="dialog-title">Qual conta vamos fazer?</h2><p>Escolha uma ou escreva a sua. Todas sem resto!</p>
+    <div id="presets" class="presets"></div>
+    <form id="problem-form" novalidate>
+      <div class="custom-problem"><label>Número para dividir<input id="dividend" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="216" autocomplete="off" required></label><span>÷</span><label>Dividir por<input id="divisor" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" placeholder="8" autocomplete="off" required></label></div>
+      <p class="field-note">Use um número de 10 a 9999 e divida por 2 a 9.</p>
+      <p id="problem-error" class="error" role="alert"></p>
+      <button class="button button-primary" type="submit">Vamos começar <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
+  <dialog id="hint-dialog" aria-labelledby="hint-title">
+    <div class="dialog-heading"><h2 id="hint-title">Uma dica para este passo</h2><button id="close-hint" class="icon-button" aria-label="Fechar dica">×</button></div>
+    <div id="hint-content"></div>
+  </dialog>
+  <script src="assets/division.dc5b9bca9f49652a2d6bd093214a9043e5d77ea6b510f49daf06e4a9633abdf4.js"></script>
+  <script src="assets/lesson.c306b6489491282efb0c011686ebd2ba943e993ecbade0677f55498e8204ee87.js"></script>
+  <script src="assets/notebook.f17e89b6ae151717bd1e5e1c14477d9e1a68a56d0f6eb768c6eb4fe3376a774c.js"></script>
+  <script src="assets/lesson-view.1c0193221110e2c28bd4fd41196007e3a8e0d20e6cb19abb21a8b13e28eec704.js"></script>
+  <script src="assets/mascot.3bae6daa043a577051e4b7e5ce137daa3bd1e75f45eb897c1647c6d9f786a23a.js"></script>
+  <script src="assets/app.6c9bc66254981a63289a55caf43ae1cd318257e9fddd82287f5ec8d18e6a6d9e.js"></script>
+</body>
+</html>
